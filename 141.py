@@ -12,17 +12,22 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        slow = head
-        fast = head
+        slow,fast=head,head
         
         while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-            
-            if slow == fast:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
                 return True
-            
-        return False
     
 
-        
+        return False
+    
+# time complexity: O(n)
+# space complexity: O(1)
+# n is the number of nodes in the linked list
+# Floyd's Tortoise and Hare algorithm
+# two pointers technique
+# slow pointer moves one step at a time
+# fast pointer moves two steps at a time
+# if there is a cycle, they will meet at some point
