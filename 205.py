@@ -5,20 +5,22 @@ Two strings s and t are isomorphic if the characters in s can be replaced to get
 All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.'''
 
 class Solution(object):
-    def isIsomorphic(self,s,t):
+    def isIsomorphic(self, s, t):
         """
         :type s: str
         :type t: str
         :rtype: bool
         """
-        s_map={}
-        t_map={}
-        for i in range(len(s)):
-            if s[i] not in s_map:
-                s_map[s[i]]=t[i]
-            if t[i] not in t_map:
-                t_map[t[i]]=s[i]
-            if s_map[s[i]]!=t[i] or t_map[t[i]]!=s[i]:
+        mapST, mapTS = {}, {}
+       
+        for c1, c2 in zip(s, t):
+            if ((c1 in mapST and mapST[c1] != c2) or 
+                (c2 in mapTS and mapTS[c2] != c1)):
                 return False
+            mapST[c1] = c2
+            mapTS[c2] = c1
         return True
-    
+        
+# time complexity: O(n)
+# space complexity: O(n)
+
