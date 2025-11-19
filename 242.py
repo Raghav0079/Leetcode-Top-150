@@ -9,14 +9,19 @@ class Solution(object):
         """
         if len(s) != len(t):
             return False
-        count = {}
-        for char in s:
-            count[char] = count.get(char, 0) + 1
-        for char in t:
-            if char not in count:
-                return False
-            count[char] -= 1
-            if count[char] < 0:
+        
+        countS, countT = {}, {}
+        
+        for i in range(len(s)):
+            countS[s[i]]=1+countS.get(s[i], 0)
+            countT[t[i]]=1+countT.get(t[i], 0)
+            
+        for c in countS:
+            if countS[c] != countT.get(c,0):
                 return False
         return True
-    
+
+# time complexity: O(n)
+# space complexity: O(1) since the size of the hash maps will be at most 26 for lowercase letters
+
+            
