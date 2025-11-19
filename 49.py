@@ -6,11 +6,17 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        anagrams={}
+        res= defaultdict(list) # mapping char count to list of anagrams
+        
         for s in strs:
-            key=''.join(sorted(s))
-            if key not in anagrams:
-                anagrams[key]=[]
-            anagrams[key].append(s)
-        return list(anagrams.values())
-    
+            count = [0]*26
+            for c in s:
+                count[ord(c)-ord('a')] +=1
+                
+            res[tuple(count)].append(s)
+            
+        return list(res.values())
+                    
+        
+# time complexity: O(NK) where N is the number of strings and K is the maximum length of a string
+# space complexity: O(NK) for the output list
