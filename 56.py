@@ -21,3 +21,6 @@ class Solution(object):
                 output.append([start,end])
         return output 
     
+# time complexity : O (n log n)
+# space complexity : O (n)
+
