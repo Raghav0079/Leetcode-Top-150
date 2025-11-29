@@ -41,4 +41,6 @@ class Solution(object):
             ranges.append(str(start)+"->"+str(end))
             
         return ranges
-                
+            
+# time complexity: O(n)
+# space complexity: O(1)
