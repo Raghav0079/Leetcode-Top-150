@@ -29,4 +29,6 @@ class Solution(object):
             return valid(node.left, left, node.val) and valid(node.right, node.val, right)
         
         return valid(root, float('-inf'), float('inf'))
-           
+
+# time complexity: O(n)
+# space complexity: O(h) where h is the height of the tree    
