@@ -25,4 +25,9 @@ class Solution(object):
             if n == k :
                 return cur.val
             cur = cur.right
+
+# time complexity is O(H + k) where H is the height of the tree
+# space complexity is O(H)
+
+
                 
