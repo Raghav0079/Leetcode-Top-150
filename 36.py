@@ -1,3 +1,9 @@
+''' Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
+
+Each row must contain the digits 1-9 without repetition.
+Each column must contain the digits 1-9 without repetition.
+Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition. '''
+
 import collections
 
 class Solution(object):
@@ -6,20 +12,24 @@ class Solution(object):
         :type board: List[List[str]]
         :rtype: bool
         """
-        cols= collections.defaultdict(set)
-        rows= collections.defaultdict(set)
-        boxes= collections.defaultdict(set) #key= (r/3,c/3)
+        cols=collections.defaultdict(set)
+        rows=collections.defaultdict(set)
+        squares=collections.defaultdict(set) #key=(r/3,c/3)
         
         for r in range(9):
             for c in range(9):
-                if board[r][c] != ".":
-                    if (board[r][c] in rows[r] or 
-                        board[r][c] in cols[c] or 
-                        board[r][c] in boxes[(r//3,c//3)]):
-                        return False
-                    
-                    cols[c].add(board[r][c])
-                    rows[r].add(board[r][c])
-                    boxes[(r//3,c//3)].add(board[r][c])
+                if board[r][c]==".":
+                    continue
+                if (board[r][c] in rows[r] or 
+                    board[r][c] in cols[c] or 
+                    board[r][c] in squares[(r//3,c//3)]):
+                    return False
+                
+                rows[r].add(board[r][c])
+                cols[c].add(board[r][c])
+                squares[(r//3,c//3)].add(board[r][c])
         
-        return True
+        return True     
+    
+# Time Complexity: O(1) since the board size is fixed (9x9)
+# Space Complexity: O(1) for the same reason
