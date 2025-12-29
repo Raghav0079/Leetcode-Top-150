@@ -54,3 +54,7 @@ char** summaryRanges(int* nums, int numsSize, int* returnSize){
     *returnSize = count;
     return result;
 }
+
+// time complexity: O(n)
+// space complexity: O(n)
+// n is the size of the input array nums
