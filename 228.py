@@ -16,31 +16,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
-        if not nums:
-            return []
+        ans = []
+        i =0 
         
-        ranges=[]
-        start=nums[0]
-        end=nums[0]
-        
-        for i in range(1,len(nums)):
-            if nums[i]==end+1:
-                end=nums[i]
+        while i < len(nums):
+            start = nums[i]
+            
+            while i < len(nums)-1 and nums[i]+1 == nums[i+1]:
+                i += 1
+                
+            if start != nums[i]:
+                ans.append(str(start) + "->" + str(nums[i]))
             else:
-                if start==end:
-                    ranges.append(str(start))
-                else:
-                    ranges.append(str(start)+"->"+str(end))
-                start=nums[i]
-                end=nums[i]
-        
-        # Add the last range
-        if start==end:
-            ranges.append(str(start))
-        else:
-            ranges.append(str(start)+"->"+str(end))
+                ans.append(str(start))
+            i +=1
             
-        return ranges
-            
-# time complexity: O(n)
-# space complexity: O(1)
+        return ans
+     
+             
