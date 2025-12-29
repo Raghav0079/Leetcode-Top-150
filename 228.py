@@ -32,5 +32,36 @@ class Solution(object):
             i +=1
             
         return ans
-     
+# Test the solution
+if __name__ == "__main__":
+    solution = Solution()
+    
+    # Test case 1
+    nums1 = [0,1,2,4,5,7]
+    print("Input:", nums1)
+    print("Output:", solution.summaryRanges(nums1))  # Expected: ["0->2","4->5","7"]
+    
+    # Test case 2
+    nums2 = [0,2,3,4,6,8,9]
+    print("\nInput:", nums2)
+    print("Output:", solution.summaryRanges(nums2))  # Expected: ["0","2->4","6","8->9"]
+    
+    # Test case 3
+    nums3 = []
+    print("\nInput:", nums3)
+    print("Output:", solution.summaryRanges(nums3))  # Expected: []
+    
+    # Test case 4
+    nums4 = [-1]
+    print("\nInput:", nums4)
+    print("Output:", solution.summaryRanges(nums4))  # Expected: ["-1"]
+    
+    # Test case 5
+    nums5 = [0]
+    print("\nInput:", nums5)
+    print("Output:", solution.summaryRanges(nums5))  # Expected: ["0"]
+    
+# time complexity: O(n)
+# space complexity: O(1) excluding output list
+
              
