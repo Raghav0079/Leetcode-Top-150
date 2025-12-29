@@ -8,21 +8,34 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: None Do not return anything, modify matrix in-place instead.
         """
-        m = len(matrix)
-        n = len(matrix[0]) if m else 0
-        row = set()
-        col = set()
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] == 0:
-                    row.add(i)
-                    col.add(j)
-        for i in row:
-            for j in range(n):
-                matrix[i][j] = 0
-        for j in col:
-            for i in range(m):
-                matrix[i][j] = 0
-    
-    
+        rows,cols=len(matrix),len(matrix[0])
+        rowZero=False
         
+        # dteremine which row and column need to be zero 
+        
+        for r in range(rows):
+            for c in range(cols):
+                if matrix[r][c]==0:
+                    matrix[0][c]=0
+                    
+                    if r>0:
+                        matrix[r][0]=0 
+                    else:
+                        rowZero=True
+                        
+        for r in range(1, rows):
+            for c in range(1, cols):
+                if matrix[0][c]==0 or matrix[r][0]==0:
+                    matrix[r][c]=0
+                    
+        if matrix[0][0]==0:
+            for r in range(rows):
+                matrix[r][0]=0
+                
+        if rowZero:
+            for c in range(cols):
+                matrix[0][c]=0
+
+# time complexity is O(m*n)
+# space complexity is O(1)
+   
