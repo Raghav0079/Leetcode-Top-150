@@ -12,16 +12,17 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        slow,fast=head,head
+        slow, fast = head, head
         
         while fast and fast.next:
-            slow=slow.next
-            fast=fast.next.next
-            if slow==fast:
+            slow = slow.next
+            fast = fast.next.next
+            
+            if slow == fast:
                 return True
-    
-
         return False
+    
+        
     
 # time complexity: O(n)
 # space complexity: O(1)
