@@ -11,13 +11,21 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        if not list1:
-            return list2 
-        if not list2:
-            return list1
-        if list1.val < list2.val:
-            list1.next = self.mergeTwoLists(list1.next, list2)
-            return list1
-        else:
-            list2.next = self.mergeTwoLists(list1, list2.next)
-            return list2
+        dummy = ListNode(0)
+        current = dummy
+        
+        while l1 and l2 :
+            if l1.val < l2.val:
+                tail.next = l1
+                l1 = l1.next
+            else:
+                tail.next = l2
+                l2 = l2.next
+            tail = tail.next
+        
+        if l1:
+            tail.next = l1
+        elif l2:
+            tail.next = l2
+        
+        return dummy.next
