@@ -29,3 +29,7 @@ class Solution(object):
             tail.next = l2
         
         return dummy.next
+    
+# Definition for singly-linked list.
+# time complexity: O(n + m)
+# space complexity: O(1)
