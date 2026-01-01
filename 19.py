@@ -7,15 +7,21 @@ class Solution(object):
         :type n: int
         :rtype: Optional[ListNode]
         """
-        dummy = ListNode(0)
-        dummy.next = head
-        first = dummy
-        second = dummy
-        for _ in range(n + 1):
-            first = first.next
-        while first:
-            first = first.next
-            second = second.next
-        second.next = second.next.next
+        dummy = ListNode(0, head)
+        left = dummy
+        right = head
+        
+        while n > 0 and right :
+            right = right.next
+            n -= 1
+            
+        while right :
+            left = left.next
+            right = right.next
+            
+        # remove the nth node from end
+        left.next = left.next.next
         return dummy.next
-    
+
+# time complexity: O(L) where L is the length of linked list
+# space complexity: O(1)
