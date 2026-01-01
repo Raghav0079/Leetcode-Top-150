@@ -28,6 +28,7 @@ class Solution(object):
         leftprev.next=prev
         
         return dummy.next
-    
-        
+# Definition for singly-linked list.
+# time complexity: O(N)
+# space complexity: O(1)
             
