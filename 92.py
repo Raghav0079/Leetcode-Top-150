@@ -9,24 +9,25 @@ class Solution(object):
         :type right: int
         :rtype: Optional[ListNode]
         """
-        if not head:
-            return None
-
-        dummy = ListNode(0)
-        dummy.next = head
-        prev = dummy
-
-        for _ in range(left - 1):
-            prev = prev.next
-
-        curr = prev.next
-
-        for _ in range(right - left):
-            next_temp = curr.next
-            curr.next = next_temp.next
-            next_temp.next = prev.next
-            prev.next = next_temp
-
+        dummy = ListNode(0,head)
+        
+        # 1. reach node at position left
+        leftprev,cur=dummy,head
+        for i in range(left-1):
+            leftprev,cur=cur,cur.next
+            
+        # 2. reverse from left to right
+        prev=None
+        for i in range(right-left+1):
+            tmpnxt=cur.next
+            cur.next=prev
+            prev,cur=cur,tmpnxt
+            
+        # 3. reconnect the reversed part
+        leftprev.next.next=cur
+        leftprev.next=prev
+        
         return dummy.next
     
         
+            
