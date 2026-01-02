@@ -8,30 +8,50 @@ void put(int key, int value) Update the value of the key if the key exists. Othe
 The functions get and put must each run in O(1) average time complexity
 '''
 
+class Node:
+    def __init__(self, key, val):
+        self.key = key
+        self.val = val
+        self.prev = None
+        self.next = None
+
+
 class LRUCache(object):
 
     def __init__(self, capacity):
         """
         :type capacity: int
         """
-        self.capacity = capacity
-        self.cache = {}
-        self.order = []
+        self.cap = capacity
+        self.cache={}
         
-
+        # left=LRU , right = most used
+        self.left, self.right = Node(0,0) , Node(0,0)
+        self.left.next, self.right.prev = self.right, self.left
+        
+        
     def get(self, key):
         """
         :type key: int
         :rtype: int
         """
         if key in self.cache:
-            self.order.remove(key)
-            self.order.append(key)
-            return self.cache[key]
+            self.remove(self.cache[key])
+            self.insert(self.cache[key])
+            
+            
+            return self.cache[key].val
         return -1
     
+    def remove(self, node):
+        prev, nxt = node.prev, node.next
+        prev.next, nxt.prev = nxt, prev
         
-
+    def insert (self, node):
+        prev, nxt = self.right.prev, self.right
+        prev.next = nxt.prev = node
+        node.prev, node.next = prev, nxt
+        
     def put(self, key, value):
         """
         :type key: int
@@ -39,13 +59,14 @@ class LRUCache(object):
         :rtype: None
         """
         if key in self.cache:
-            self.cache[key] = value
-            self.order.remove(key)
-            self.order.append(key)
-        else:
-            if len(self.cache) >= self.capacity:
-                lru = self.order.pop(0)
-                del self.cache[lru]
-            self.cache[key] = value
-            self.order.append(key)
+            self.remove(self.cache[key])
+        self.cache[key] = Node(key, value)
+        self.insert(self.cache[key])
+        if len(self.cache) > self.cap:
+            # remove from the list and delete the LRU from cache / hashmap
+            lru=self.left.next
+            self.remove(lru)
+            del self.cache[lru.key]
             
+# time complexity: O(1) for both get and put
+# space complexity: O(capacity)
