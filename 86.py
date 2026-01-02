@@ -8,5 +8,21 @@ class Solution(object):
         :type head: Optional[ListNode]
         :type x: int
         :rtype: Optional[ListNode]
-        """
+        """     
+        left,right = ListNode(0),ListNode(0)
+        ltail,rtail = left,right
         
+        while head:
+            if head.val < x :
+                ltail.next=head
+                ltail=ltail.next
+            else:
+                rtail.next=head
+                rtail=rtail.next
+            head=head.next
+        ltail.next=right.next
+        rtail.next=None
+        return left.next
+    
+# time complexity: O(n)
+# space complexity: O(1)
