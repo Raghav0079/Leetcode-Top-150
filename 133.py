@@ -47,6 +47,13 @@ class Solution(object):
             for nei in node.neighbors:
                 copy.neighbors.append(dfs(nei))
             return copy 
+
+# time complexity: O(N + E)
+# space complexity: O(N)
+# N is number of nodes and E is number of edges
+
+
         
 
         return dfs(node) if node else None
+
