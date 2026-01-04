@@ -42,4 +42,10 @@ class Solution(object):
         for r in range(rows):
             for c in range(cols):
                 if board[r][c]=="T":
+
                     board[r][c]="O"
+
+                    
+# time complexity: O(MxN)
+# space complexity: O(MxN)
+# M is number of rows and N is number of columns
