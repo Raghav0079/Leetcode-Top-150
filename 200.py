@@ -46,3 +46,8 @@ class Solution(object):
         
 
         return islands
+
+    
+# time complexity: O(MxN)
+# space complexity: O(MxN)
+# M is number of rows and N is number of columns
