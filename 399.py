@@ -42,4 +42,10 @@ class Solution(object):
                         
                     
             return -1.0
+
         return [bfs(q[0], q[1]) for q in queries]
+
+
+# time complexity : O(E + Q * (V + E)) where E is the number of equations, V is the number of variables and Q is the number of queries
+# space complexity : O(E) for the adjacency list and the queue in bfs which can take
+# O(V) space in the worst case
