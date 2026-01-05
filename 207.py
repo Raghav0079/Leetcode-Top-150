@@ -36,4 +36,10 @@ class Solution(object):
             if not dfs(crs):
                 return False
         return True
+
+# time complexity : O(V + E) where V is the number of courses and E is the number of prerequisites
+# space complexity : O(V + E) for the adjacency list and the recursion stack
+# visitset will take O(V) space as well
+
+
         
