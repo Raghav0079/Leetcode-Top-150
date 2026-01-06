@@ -14,23 +14,25 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        self.min_distance = float('inf')
-        self.prev = None
+        min_diff = float('inf')
+        prev = None
         
         def dfs(node):
+            nonlocal min_diff, prev
             if node is None:
                 return
             
             dfs(node.left)
             
-            if self.prev is not None:
-                self.min_distance = min(self.min_distance, node.val - self.prev)
+            if prev is not None:
+                min_diff = min(min_diff, node.val - prev)
             
-            self.prev = node.val
-        
+            prev = node.val
             dfs(node.right)
+            
         dfs(root)
-        return self.min_distance
+        return min_diff
+    
     
 # Time Complexity: O(N) where N is the number of nodes in the BST.
 # Space Complexity: O(H) where H is the height of the BST due to the recursion stack.
