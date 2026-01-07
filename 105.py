@@ -13,14 +13,19 @@ class Solution(object):
         :type inorder: List[int]
         :rtype: Optional[TreeNode]
         """
+        # Base case
         if not preorder or not inorder:
             return None
         
+        # Create the root node
         root = TreeNode(preorder[0])
         mid = inorder.index(preorder[0])
+        
+        # Recursively build the left and right subtrees
         root.left = self.buildTree(preorder[1:mid + 1 ],inorder[:mid])
         root.right = self.buildTree(preorder[mid + 1:],inorder[mid + 1:])
+        
+        # Return the root node
         return root
-    
     
     
