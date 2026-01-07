@@ -28,4 +28,5 @@ class Solution(object):
         return dfs(root.left,root.right)
 
 # time complexity: O(n)
-# space complexity: O(h) where h is the height of the tree
+# space complexity: O(h) where h is the height of the tree 
+# we use stack space for dfs
