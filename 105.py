@@ -27,5 +27,9 @@ class Solution(object):
         
         # Return the root node
         return root
-    
-    
+
+
+# time complexity: O(n^2) in the worst case due to index() call inside recursion
+# space complexity: O(n) for the recursion stack and the tree nodes
+
+
