@@ -18,13 +18,21 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: Optional[TreeNode]
         """
+        # Base case
         if not inorder:
             return None
         
+        # Create the root node
         root =TreeNode(postorder.pop())
         
+        # Find the index of the root in inorder traversal
         index = inorder.index(root.val)
+        
+        # Recursively build the right and left subtrees
         root.right = self.buildTree(inorder[index + 1:], postorder)
         root.left = self.buildTree(inorder[:index], postorder)
+        
+        # Return the root node
         return root
+    
     
