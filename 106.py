@@ -18,18 +18,13 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: Optional[TreeNode]
         """
-        inorderIdx={v:i for i , v in enumerate(inorder)}
+        if not inorder:
+            return None
         
-        def helper(l,r):
-            
-            if l>r :
-                return None
+        root =TreeNode(postorder.pop())
         
-            root=TreeNode(postorder.pop())
-        
-            idx=inorderIdx[root.val]
-            root.right =helper(idx+1,r)
-            root.left =helper(l,idx-1)
-            return root
-
-        return helper(0,len(inorder)-1)
+        index = inorder.index(root.val)
+        root.right = self.buildTree(inorder[index + 1:], postorder)
+        root.left = self.buildTree(inorder[:index], postorder)
+        return root
+    
