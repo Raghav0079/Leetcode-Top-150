@@ -54,3 +54,13 @@ class Solution(object):
 # time complexity: O(N^2)
 # space complexity: O(N^2)
 
+# Example test case
+# board = [[-1,-1,-1,-1,-1,-1],
+#          [-1,-1,-1,-1,-1,-1],
+#          [-1,-1,-1,-1,-1,-1],
+#          [-1,35,-1,-1,13,-1],
+#          [-1,-1,-1,-1,-1,-1],
+#          [-1,15,-1,-1,-1,-1]]
+# sol = Solution()
+# print(sol.snakesAndLadders(board))  # Output: 4
+
