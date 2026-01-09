@@ -10,33 +10,34 @@ Given the two gene strings startGene and endGene and the gene bank bank, return 
 Note that the starting point is assumed to be valid, so it might not be included in the bank.
 """
 
-
 from collections import deque
 
-
+# 909. Snakes and Ladders
 class Solution(object):
     def snakesAndLadders(self, board):
         """
         :type board: List[List[int]]
         :rtype: int
         """
-        length = len(board)  # Fixed typo: lenght -> length
+        # BFS
+        length = len(board)  
         board.reverse()
 
+        # Convert integer to board position
         def intToPos(square):
             r = (square - 1) // length
             c = (square - 1) % length
             if r % 2 == 1:
                 c = length - 1 - c
             return [r, c]
-
+        # BFS
         q = deque()
         q.append([1, 0])
         visit = set()
-
-        while q:
+        # visit.add(1)
+        while q:    # while queue is not empty
             square, moves = q.popleft()
-
+            # Try all the 6 possible moves
             for i in range(1, 7):
                 nextSquare = square + i
                 r, c = intToPos(nextSquare)
@@ -48,4 +49,4 @@ class Solution(object):
                     visit.add(nextSquare)
                     q.append([nextSquare, moves + 1])
         return -1
-
+# @lc code=end
