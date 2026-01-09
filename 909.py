@@ -50,3 +50,7 @@ class Solution(object):
                     q.append([nextSquare, moves + 1])
         return -1
 # @lc code=end
+
+# time complexity: O(N^2)
+# space complexity: O(N^2)
+
