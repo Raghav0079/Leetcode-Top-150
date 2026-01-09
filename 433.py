@@ -48,4 +48,11 @@ class Solution(object):
 # time complexity: O(N * M) where N is the number of genes in the bank and M is the length of each gene
 # space complexity: O(N)
     
+# Example test case
+# startGene = "AACCGGTT"
+# endGene = "AAACGGTA"
+# bank = ["AACCGGTA", "AACCGCTA", "AAACGGTA"]
+# sol = Solution()
+# print(sol.minMutation(startGene, endGene, bank))  # Output: 2
+
 
