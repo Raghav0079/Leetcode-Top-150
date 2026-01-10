@@ -10,23 +10,25 @@ Given the root of a binary tree, return the level order traversal of its nodes' 
 #         self.right = right
 import collections
 
-
+# BFS approach
 class Solution(object):
     def levelOrder(self, root):
         """
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
-        
+        # queue for BFS
         q = []
         res = []
         if not root:
             return res
         
+        # start BFS
         q.append(root)
         while q:
             size =len (q)
             level =[]
+            # process all nodes at the current level
             for _ in range(size):
                 node = q.pop(0)
                 level.append(node.val)
@@ -35,5 +37,6 @@ class Solution(object):
                 if node.right:
                     q.append(node.right)
             res.append(level)
+        # return the list of levels
         return res
     
