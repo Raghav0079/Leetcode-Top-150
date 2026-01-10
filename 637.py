@@ -15,15 +15,19 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[float]
         """
+        # BFS
         if not root :
             return []
         res=[]
         
+        # queue for BFS
         q=deque()
         q.append(root)
+        # traverse the tree level by level
         while q:
             size=len(q)
             level_sum=0
+            # process all nodes at the current level
             for _ in range(size):
                 node=q.popleft()
                 level_sum+=node.val
@@ -31,6 +35,8 @@ class Solution(object):
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
+                    # calculate the average for the current level
             res.append(level_sum/size)
+        # return the list of averages    
         return res
     
