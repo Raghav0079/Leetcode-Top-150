@@ -17,20 +17,23 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
-        res=[]
-        q=collections.deque()
-        q.append(root)
         
+        q = []
+        res = []
+        if not root:
+            return res
+        
+        q.append(root)
         while q:
-            qLen=len(q)
-            level=[]
-            for i in range(qLen):
-                node = q.popleft()
-                if node : 
-                    level.append(node.val)
+            size =len (q)
+            level =[]
+            for _ in range(size):
+                node = q.pop(0)
+                level.append(node.val)
+                if node.left:
                     q.append(node.left)
+                if node.right:
                     q.append(node.right)
-            if level:
-                res.append(level)
-                
+            res.append(level)
         return res
+    
