@@ -39,4 +39,17 @@ class Solution(object):
             res.append(level_sum/size)
         # return the list of averages    
         return res
+
+
     
+# Time Complexity: O(N) where N is the number of nodes in the tree.
+# Space Complexity: O(M) where M is the maximum number of nodes at any level in
+# example test case 
+# the tree (the width of the tree).
+# Example:
+# Input: root = [3,9,20,null,null,15,7]
+# Output: [3.00000,14.50000,11.00000]
+# Explanation: The average value of nodes on level 0 is 3, on level 1 is 14.5,
+# and on level 2 is 11.
+# Hence return [3, 14.5, 11].
+
