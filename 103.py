@@ -1,4 +1,5 @@
-'''Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).'''
+'''Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. 
+(i.e., from left to right, then right to left for the next level and alternate between).'''
 
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -8,7 +9,7 @@
 #         self.right = right
 from collections import deque
 
-
+# BFS approach 
 class Solution(object):
     def zigzagLevelOrder(self, root):
         """
@@ -16,7 +17,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         res =[]
-        
+        # queue for BFS
         q= deque([root] if root else [])
         while q :
             level =[]
@@ -30,6 +31,6 @@ class Solution(object):
                     q.append(node.right)
             level=list(reversed(level)) if len(res)%2 else level
             res.append(level)
-            
+        # return the list of zigzag levels
         return res
     
