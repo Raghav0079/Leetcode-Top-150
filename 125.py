@@ -14,3 +14,7 @@ class Solution(object):
         check = "".join([char.lower() for char in s if char.isalnum()])
         return check == check[::-1]   # Check if the string is equal to its reverse
 
+# Example usage:
+# sol = Solution()
+# print(sol.isPalindrome("A man, a plan, a canal: Panama"))  # Output: True
+# print(sol.isPalindrome("race a car"))  # Output: False    
