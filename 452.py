@@ -26,6 +26,10 @@ class Solution(object):
                 prev = [curr[0], min (prev[1], curr[1])]
             else:
                 prev = curr 
+
+
+# time complexity : O(nlogn)
+# space complexity : O(1)
                 
         return result
     
