@@ -34,6 +34,13 @@ class Solution(object):
         # return the merged intervals
         return result
     
+
+# time complexity: O(n)
+# space complexity: O(n)
+# n is the length of intervals
+
             
+            
+
             
             
