@@ -32,3 +32,9 @@ class Solution(object):
                 block.append(str(start))
             i += 1
         return block
+
+
+
+# time complexity: O(n)
+# space complexity: O(1)
+# n is the length of nums
