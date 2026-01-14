@@ -14,11 +14,12 @@ class Solution(object):
         :type newInterval: List[int]
         :rtype: List[List[int]]
         """
+        # edge case
         if not intervals:
             return [newinterval]
-        
+        # main logic
         result = []
-        
+        # iterate through intervals
         for i in range(len(intervals)):
             if newinterval [1]< intervals [i][0]:
                 result.append(newinterval)
@@ -28,7 +29,9 @@ class Solution(object):
             else:
                 newinterval [0] = min(newinterval [0], intervals [i][0])
                 newinterval [1] = max(newinterval [1], intervals [i][1])
+        # if newinterval not in result:
         result.append(newinterval)
+        # return the merged intervals
         return result
     
             
