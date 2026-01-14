@@ -10,29 +10,30 @@ Each range [a,b] in the list should be output as:
 "a" if a == b
 """
 
-
+# approach : two pointers
 class Solution(object):
     def summaryRanges(self, nums):
         """
         :type nums: List[int]
         :rtype: List[str]
         """
+        # edge case
         block = []
         i = 0
 
+        # main logic
         while i < len(nums):
             start = nums[i]
-
+            # move i to the end of the current range
             while i < len(nums) - 1 and nums[i] + 1 == nums[i + 1]:
                 i += 1
-
+            # add the range to the block
             if start != nums[i]:
                 block.append("{}->{}".format(start, nums[i]))
-            else:
+            else:  # single number
                 block.append(str(start))
             i += 1
-        return block
-
+        return block  # return the list of ranges
 
 
 # time complexity: O(n)
