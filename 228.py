@@ -39,3 +39,8 @@ class Solution(object):
 # time complexity: O(n)
 # space complexity: O(1)
 # n is the length of nums
+
+# example usage
+# sol = Solution()
+# print(sol.summaryRanges([0,1,2,4,5,7]))  # Output: ["0->2","4->5","7"]
+# print(sol.summaryRanges([0,2,3,4,6,8,9]))  # Output: ["0","2->4","6","8->9"]
