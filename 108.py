@@ -34,3 +34,10 @@ class Solution(object):
 # time complexity: O(n)
 # space complexity: O(log n)
 
+
+# example usage:
+# sol = Solution()
+# bst_root = sol.sortedArrayToBST([-10,-3,0,5,9])
+# The above will create a height-balanced BST from the sorted array.
+
+
