@@ -47,3 +47,11 @@ class Solution(object):
         if right:
             tail.next = right
         return dummy.next
+
+
+# time complexity: O(n log n)
+# space complexity: O(log n) due to recursion stack
+
+
+
+
