@@ -52,6 +52,12 @@ class Solution(object):
 # time complexity: O(n log n)
 # space complexity: O(log n) due to recursion stack
 
+# example usage:
+# sol = Solution()
+# sorted_head = sol.sortList(head)
+# The above will sort the linked list in ascending order.
+
+
 
 
 
