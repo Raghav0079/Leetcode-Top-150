@@ -29,5 +29,8 @@ class Solution(object):
         # call helper function
         return helper(0,len(nums)-1)
     
-    
-        
+
+
+# time complexity: O(n)
+# space complexity: O(log n)
+
