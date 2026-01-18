@@ -54,3 +54,7 @@ class Solution(object):
 # merged_head = sol.mergeKLists(lists)
 # while merged_head:
 #     print(merged_head.val)
+
+# time complexity is O(N log k) where N is the total number of nodes and k is the number of linked lists.
+# space complexity is O(1) as we are not using any extra space for merging the lists.
+
