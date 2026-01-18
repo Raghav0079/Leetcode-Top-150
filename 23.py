@@ -47,7 +47,13 @@ class Solution(object):
         if L2 : 
             tail.next = L2
         return dummy.next
-    
+
+# Explanation:
+# We use a divide and conquer approach to merge k sorted linked lists. In each iteration,
+# we merge pairs of linked lists until only one linked list remains. The mergeList function merges two sorted linked lists into one sorted linked list. We use a dummy node to simplify the merging process. The overall
+
+
+          
 
                 
                 
