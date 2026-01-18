@@ -48,3 +48,9 @@ class Solution(object):
         return dummy.next
                 
         
+# example usage
+# lists = [[1,4,5],[1,3,4],[2,6]]
+# sol = Solution()
+# merged_head = sol.mergeKLists(lists)
+# while merged_head:
+#     print(merged_head.val)
