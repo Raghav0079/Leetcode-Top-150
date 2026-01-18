@@ -41,17 +41,14 @@ class Solution(object):
                 tail.next = L2 
                 L2 = L2.next
             tail = tail.next
+            # attaching the remaining nodes
         if L1 :
             tail.next = L1
         if L2 : 
             tail.next = L2
         return dummy.next
-# example usage
-# lists = [[1,4,5],[1,3,4],[2,6]]
-# sol = Solution()
-# merged_head = sol.mergeKLists(lists)
-# while merged_head:
-#     print(merged_head.val)
+    
+
                 
                 
 # time complexity is O(N log k) where N is the total number of nodes and k is the number of linked lists.
