@@ -52,10 +52,11 @@ class Solution(object):
 # We use a divide and conquer approach to merge k sorted linked lists. In each iteration,
 # we merge pairs of linked lists until only one linked list remains. The mergeList function merges two sorted linked lists into one sorted linked list. We use a dummy node to simplify the merging process. The overall
 
-
+# example usage 
+# lists = [[1,4,5],[1,3,4],[2,6]]
+# merged_list = Solution().mergeKLists(lists)
+# print(merged_list)
           
-
-                
                 
 # time complexity is O(N log k) where N is the total number of nodes and k is the number of linked lists.
 # space complexity is O(1) as we are not using any extra space for merging the lists.
