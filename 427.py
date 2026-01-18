@@ -14,12 +14,13 @@ class Solution(object):
         :type lists: List[Optional[ListNode]]
         :rtype: Optional[ListNode]
         """
+        # base case 
         if not lists or len(lists) == 0:
             return None
-        
+        # iterative while loop until we have only one list
         while len(lists) > 1:
             mergedList =[]
-            
+            # loop through pairs of lists
             for i in range(0,len(lists),2):
                 l1 = lists[i]
                 l2 = lists [i+1] if (i+1) < len(lists) else None 
@@ -27,11 +28,11 @@ class Solution(object):
             lists = mergedList
         return lists[0]
     
-        
+    # function for merging the lists     
     def mergeList(self,L1,L2):
         dummy=ListNode(0)
         tail = dummy
-        
+        # while loop on L! and L2
         while L1 and L2 :
             if L1.val < L2.val :
                 tail.next = L1
@@ -47,5 +48,3 @@ class Solution(object):
         return dummy.next
                 
         
-
-
