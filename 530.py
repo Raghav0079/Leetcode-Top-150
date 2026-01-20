@@ -46,7 +46,8 @@ class Solution(object):
 # solution = Solution()
 # print(solution.getMinimumDifference(root))  # Output: 1
 
-# calling the dfs function
-        dfs(root)
-        return min_dist[0]
+#  time complexity: O(N)
+# space complexity: O(H) where H is the height of the tree
+
+
 
