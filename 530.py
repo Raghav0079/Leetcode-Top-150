@@ -1,23 +1,32 @@
+"""Given the root of a Binary Search Tree (BST),
+return the minimum absolute difference between the values of any two different nodes in the tree.
+
+"""
+
+
+# Definition for a binary tree node.
+# solving approach: inorder traversal
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-
+# defining the solution class
 class Solution(object):
     def getMinimumDifference(self, root):
         """
         :type root: Optional[TreeNode]
         :rtype: int
         """
+        # defining variables to store minimum distance and previous node value
         min_dist = [float("inf")]
         prev = [None]
-
+# defining the dfs function for inorder traversal
         def dfs(node):
             if not node:
                 return
-
+# defining inorder traversal
             dfs(node.left)
 
             if prev[0] is not None:
@@ -26,6 +35,6 @@ class Solution(object):
             prev[0] = node.val
 
             dfs(node.right)
-
+# calling the dfs function
         dfs(root)
         return min_dist[0]
