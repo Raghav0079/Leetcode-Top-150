@@ -35,6 +35,18 @@ class Solution(object):
             prev[0] = node.val
 
             dfs(node.right)
+
+
+# example usage:
+# root = TreeNode(4)
+# root.left = TreeNode(2)
+# root.right = TreeNode(6)
+# root.left.left = TreeNode(1)
+# root.left.right = TreeNode(3)
+# solution = Solution()
+# print(solution.getMinimumDifference(root))  # Output: 1
+
 # calling the dfs function
         dfs(root)
         return min_dist[0]
+
