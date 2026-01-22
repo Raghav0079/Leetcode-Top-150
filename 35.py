@@ -25,3 +25,6 @@ class Solution(object):
 # print(sol.searchInsert([1,3,5,6], 5))  # Output: 2
 # print(sol.searchInsert([1,3,5,6], 2))  # Output: 1
 # print(sol.searchInsert([1,3,5,6], 7))  # Output: 4
+
+# time complexity : O(log n)
+# space complexity: O(1)
