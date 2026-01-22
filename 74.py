@@ -45,6 +45,10 @@ class Solution(object):
                 left = mid + 1
         return False
 
+# Example usage:
+# sol = Solution()
+# print(sol.searchMatrix([[1,3,5,7],[10,11,16,20],[23,30,34,60]], 3))  # Output: True
+# print(sol.searchMatrix([[1,3,5,7],[10,11,16,20],[23,30,34,60]], 13))  # Output: False
 
 # Example usage:
 # sol = Solution()
