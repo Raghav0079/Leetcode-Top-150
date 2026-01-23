@@ -26,4 +26,6 @@ class Solution:
             else:
                 right = mid
         return left
-    
+
+# time complexity: O(log n)
+# space complexity: O(1)
