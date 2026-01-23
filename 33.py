@@ -43,4 +43,13 @@ class Solution(object):
                 else:
                     l = m +1
                     
+
         return -1
+
+
+# Example usage:
+# sol = Solution()
+# print(sol.search([4,5,6,7,0,1,2], 0))  # Output: 4
+# print(sol.search([4,5,6,7,0,1,2], 3))  # Output: -1
+# print(sol.search([1], 0))                # Output: -1
+# print(sol.search([1], 1))                # Output: 0
