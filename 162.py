@@ -29,3 +29,9 @@ class Solution:
 
 # time complexity: O(log n)
 # space complexity: O(1)
+
+# Example usage:
+# sol = Solution()
+# print(sol.findPeakElement([1,2,3,1]))  # Output: 2
+# print(sol.findPeakElement([1,2,1,3,5,6,4]))  # Output: 5
+# print(sol.findPeakElement([1]))  # Output: 0
