@@ -10,23 +10,27 @@ You must write an algorithm that runs in O(log n) time.
 
 """
 
-
+# defining the Solution class
 class Solution:
-
+# function to find peak element
     def findPeakElement(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
+        # initialize the left and right pointers
         left, right = 0, len(nums) - 1
+        
+        # binary search loop
         while left < right:
             mid = (left + right) // 2
             if nums[mid] < nums[mid + 1]:
                 left = mid + 1
             else:
                 right = mid
-        return left
-
+        return left # peak element index
+    
+    
 # time complexity: O(log n)
 # space complexity: O(1)
 
