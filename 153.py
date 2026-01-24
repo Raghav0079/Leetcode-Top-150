@@ -35,6 +35,11 @@ class Solution(object):
                 r= m-1 # Move left
         return res # Return the minimum element
     
-    
-            
+
+# Example usage
+# sol = Solution()
+# print(sol.findMin([3,4,5,1,2]))  # Output: 1
+# print(sol.findMin([4,5,6,7,0,1,2]))  # Output: 0
+
         
+
