@@ -46,3 +46,7 @@ class Solution(object):
 # print(sol.searchRange([5,7,7,8,8,10], 8))  # Output: [3, 4]
 # print(sol.searchRange([5,7,7,8,8,10], 6))  # Output: [-1, -1]
 
+
+# time complexity: O(log n)
+# space complexity: O(1)
+
