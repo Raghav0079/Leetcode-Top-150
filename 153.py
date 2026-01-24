@@ -9,29 +9,32 @@ Given the sorted rotated array nums of unique elements, return the minimum eleme
 
 You must write an algorithm that runs in O(log n) time
 """
+# defining the Solution class
 class Solution(object):
     def findMin(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
+        # Finding the minimum element using binary search
         res = nums[0]
         l,r = 0,len(nums)-1
-        
+        # Binary search loop
         while l <= r:
             if nums[l] < nums[r]:
                 res = min(res,nums[l])
                 break 
-            
+            # Finding the mid index
             m = (l+r) //2
             res = min(res,nums[m])
-            
+            # Deciding which side to search next
             if nums[m] >= nums[l]:
                 l = m +1
-                
+                # Move right
             else:
-                r= m-1 
-        return res
+                r= m-1 # Move left
+        return res # Return the minimum element
+    
     
             
         
