@@ -47,3 +47,5 @@ class Solution(object):
 # print(sol.findMedianSortedArrays([1,2], [3,4]))  #
 # Output: 2.5
 
+# time complexity: O(m+n)
+# space complexity: O(m+n)
