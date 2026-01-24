@@ -41,4 +41,9 @@ class Solution(object):
         else:
             return merged[mid] * 1.0
         
-        
+# Example usage
+# sol = Solution()
+# print(sol.findMedianSortedArrays([1,3], [2]))  # Output: 2.0
+# print(sol.findMedianSortedArrays([1,2], [3,4]))  #
+# Output: 2.5
+
