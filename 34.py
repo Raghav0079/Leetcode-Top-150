@@ -41,3 +41,8 @@ class Solution(object):
         return i # Return the found index or -1 if not found
     
                 
+# Example usage
+# sol = Solution()
+# print(sol.searchRange([5,7,7,8,8,10], 8))  # Output: [3, 4]
+# print(sol.searchRange([5,7,7,8,8,10], 6))  # Output: [-1, -1]
+
