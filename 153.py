@@ -41,5 +41,7 @@ class Solution(object):
 # print(sol.findMin([3,4,5,1,2]))  # Output: 1
 # print(sol.findMin([4,5,6,7,0,1,2]))  # Output: 0
 
-        
+# time complexity: O(log n)
+# space complexity: O(1)    
+
 
