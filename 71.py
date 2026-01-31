@@ -23,23 +23,18 @@ class Solution(object):
         :rtype: str
         """
         stack = []
-        cur = ""
-
-        for c in path + "/":
-            if c == "/":
-                if cur == "..":
-                    if stack:
-                        stack.pop()
-                elif cur != "" and cur != ".":
-                    stack.append(cur)
-                cur = ""
+        parts = path.split("/")
+        for part in parts:
+            if part == "" or part == ".":
+                continue
+            elif part == "..":
+                if stack:
+                    stack.pop()
             else:
-                cur += c
-
-        if not stack:
-            return "/"
+                stack.append(part)
         return "/" + "/".join(stack)
-
+    
+        
         
     
     
