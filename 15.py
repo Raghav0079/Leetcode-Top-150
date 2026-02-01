@@ -38,3 +38,5 @@ class Solution(object):
 
         return answer
 
+# time complexity is O(n^2)
+# space complexity is O(1)
