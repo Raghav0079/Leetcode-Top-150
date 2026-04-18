@@ -1,24 +1,36 @@
+import random
+
 class Solution(object):
     def findKthLargest(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
-        k = len(nums) -k 
 
-        def quickSelect(l,r):
-            pivot , p = nums[r] , l
-            for i in range(l,r):
-                if nums[i] <= pivot :
-                    nums[p] , nums[i] = nums[i] , nums[p] 
-                    p += 1
-            nums[p] , nums[r] = nums[r] , nums[p]
-
-            if p > k : return quickSelect(l, p- 1)
-            elif p < k : return quickSelect(p+1 , r )
-
-            else : return nums[p]
-
-        return quickSelect(0, len(nums) -1)
+        target = len(nums) - k
         
+        def quickSelect(l, r):
+
+            pivot_idx = random.randint(l, r)
+            pivot = nums[pivot_idx]
+            
+
+            lt, i, gt = l, l, r
+            
+            while i <= gt:
+                if nums[i] < pivot:
+                    nums[lt], nums[i] = nums[i], nums[lt]
+                    lt += 1
+                    i += 1
+                elif nums[i] > pivot:
+                    nums[gt], nums[i] = nums[i], nums[gt]
+                    gt -= 1
+                else:
+                    i += 1
+            
+
+            
+            if target < lt:
+                return quickSelect(l, lt - 1)
+            elif target > gt:
+                return quickSelect(gt + 1, r)
+            else:
+                return nums[target]
+
+        return quickSelect(0, len(nums) - 1)
